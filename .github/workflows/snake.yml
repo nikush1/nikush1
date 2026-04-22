@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # 🔥 IMPORTANT FIX
+  contents: write
 
 jobs:
   build:
@@ -21,8 +21,8 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - name: Push Snake
-        uses: peaceiris/actions-gh-pages@v4   # ✅ updated action
+      - name: Deploy Snake
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist
